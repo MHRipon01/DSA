@@ -22,7 +22,7 @@ void insert_at_any_pos(Node *&head,int idx, int val)
     }//tmp at idx-1 (j idx dise tar ager ghore)
     newnode->next = tmp->next;
     tmp->next = newnode;
-}
+} 
 
 void print_linked_list(Node *head)
 {
