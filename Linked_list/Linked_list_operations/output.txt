@@ -1,5 +1,7 @@
-Tail before delete: 400
-Tail after delete: 30
-10
-20
-30
+1 40
+5 50
+4 50
+0 100
+7 40
+1 110
+7 40
