@@ -7,7 +7,7 @@ public:
     int val;
     Node *prev;
     Node *next;
-
+    // constructor
     Node(int val)
     {
         this->val = val;
@@ -27,18 +27,16 @@ void print_forward(Node *head)
     cout << endl;
 }
 
-void insert_at_tail(Node *&head,Node *&tail, int val)
+void delete_at_any_pos(Node *head, int idx)
 {
-    Node *newnode = new Node(val);
-    if(head == NULL){
-        head = newnode;
-        tail = newnode;
-        return;
+    Node *tmp = head;
+    for(int i=1; i<idx; i++){
+        tmp = tmp->next;
     }
-    tail->next = newnode;
-    newnode->prev = tail;
-     tail =newnode ;
-    
+    Node *deleteNode = tmp->next;
+    tmp->next= tmp->next->next;
+    tmp->next->prev =tmp;
+    delete deleteNode;
 }
 
 int main()
@@ -53,9 +51,7 @@ int main()
     tail->prev = a;
 
     print_forward(head);
-    insert_at_tail(head,tail, 100);
-    insert_at_tail(head,tail, 200);
-    insert_at_tail(head,tail, 500);
-    print_forward(head);
+    delete_at_any_pos(head, 1);
+    print_forward(head); 
     return 0;
 }

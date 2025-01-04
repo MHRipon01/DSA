@@ -35,7 +35,8 @@ void delete_at_tail(Node *&head, Node *&tail)
     Node *deleteNode = tail;
     tail = tail->prev;
     delete deleteNode;
-    if(tail == NULL){
+    if (tail == NULL)
+    {
         head = NULL;
         return;
     }
