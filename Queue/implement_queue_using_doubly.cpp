@@ -7,10 +7,12 @@ class Node
 public:
     int val;
     Node *next;
+    Node *prev;
     Node(int val)
     {
         this->val = val;
         this->next = NULL;
+        this->prev = NULL;
     }
 };
 
@@ -20,6 +22,8 @@ public:
     Node *head = NULL;
     Node *tail = NULL;
     int sz = 0;
+
+
     // push
     void push(int val) // O(1)
     {
@@ -33,6 +37,7 @@ public:
             return;
         }
         tail->next = newnode;
+        newnode->prev = tail;
         tail = newnode;
     }
 
@@ -49,7 +54,9 @@ public:
         if (head == NULL)
         {
             tail = NULL;
+            return;
         }
+        head->prev= NULL;
     }
 
     // front
@@ -65,7 +72,7 @@ public:
     }
 
     // size
-    int size()
+    int size()  //O(1)
     {
         return sz;
     }
