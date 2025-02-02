@@ -32,7 +32,7 @@ void delete_heap(vector<int> &v)
     v[0] = v.back();
     v.pop_back();
     int cur_idx = 0;
-
+cout << "deleting:" << v[cur_idx] << " ";
     while (true)
     {
         int left_idx = cur_idx * 2 + 1;
