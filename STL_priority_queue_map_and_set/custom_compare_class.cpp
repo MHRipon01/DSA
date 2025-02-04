@@ -16,6 +16,16 @@ public:
     }
 };
 
+class cmp{
+    public:
+    bool operator()(Student l, Student r){
+        
+    }
+}
+
+
+
+
 int main()
 {
     priority_queue<Student , vector<Student> , cmp> pq;
