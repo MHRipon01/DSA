@@ -16,29 +16,46 @@ public:
     }
 };
 
-class cmp{
-    public:
-    bool operator()(Student l, Student r){
-        
+class cmp
+{
+public:
+    bool operator()(Student l, Student r)
+    {
+        // if (l.marks < r.marks)
+        //     return true;
+        // else
+        //     return false;
+
+        // return l.marks > r.marks;
+        if(l.marks > r.marks) return true;
+        else if(l.marks < r.marks) return false;
+        else{
+            return l.roll > r.roll;
+        }
     }
-}
-
-
-
+};
 
 int main()
 {
-    priority_queue<Student , vector<Student> , cmp> pq;
+    priority_queue<Student, vector<Student>, cmp> pq;
     int n;
     cin >> n;
 
-    // for(int i=0; i< n; i++)
-    for(int i=0; i<n; i++){
+
+    for (int i = 0; i < n; i++)
+    {
         string name;
-        int roll ,marks;
-        cin>> name >> roll >> marks;
-        Student obj(name , roll , marks);
-        pq.push(obj); 
+        int roll, marks;
+        cin >> name >> roll >> marks;
+        Student obj(name, roll, marks);
+        pq.push(obj);
+    }
+
+
+    while (!pq.empty())
+    {
+        cout<<pq.top().name<<" "<<pq.top().roll << " " << pq.top().marks << endl;
+        pq.pop();
     }
 
     return 0;
