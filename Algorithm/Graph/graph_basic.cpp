@@ -8,3 +8,6 @@
 // weight :
 // 1.Weighted 
 // 2. Unweighted
+// -Cycle
+//1. Cyclic
+//2. Acyclic
