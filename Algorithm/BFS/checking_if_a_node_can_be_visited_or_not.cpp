@@ -2,51 +2,54 @@
 using namespace std;
 
 vector<int> adj_list[1005];
-bool visited[1005];
+bool vis[1005];
 
 void bfs(int src)
 {
-
     queue<int> q;
     q.push(src);
-    visited[src] = true;
-
+    vis[src] = true;
     while (!q.empty())
     {
-        // ber kore ana
         int par = q.front();
         q.pop();
 
-        // oi node ke niye kaj kora
-        cout << par << " ";
+        // cout << par << " ";
 
-        // children gulo push kora
         for (int child : adj_list[par])
         {
-            if (visited[child] == false)
+            if (!vis[child])
             {
                 q.push(child);
-                visited[child] = true;
+                vis[child] = true;
             }
         }
     }
+    // cout << endl;
 }
 
 int main()
 {
     int n, e;
     cin >> n >> e;
+    queue<int> q;
 
     while (e--)
     {
         int a, b;
         cin >> a >> b;
         adj_list[a].push_back(b);
-
         adj_list[b].push_back(a);
     }
-    memset(visited, false, sizeof(visited));
-    bfs(0);
 
-    return 0;
+    int src, dst;
+    cin >> src >> dst;
+
+    bfs(src);
+    if (vis[dst])
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+
+            return 0;
 }
