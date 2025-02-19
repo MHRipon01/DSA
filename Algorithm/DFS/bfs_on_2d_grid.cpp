@@ -36,7 +36,7 @@ void bfs(int si, int sj)
             int ci = par_i + movement[i].first;
             int cj = par_j + movement[i].second;
 
-            if (valid(ci, cj) && !vis[ci][cj])
+            if (valid(ci, cj) && !vis[ci][cj] )
             {
                 q.push({ci, cj});
                 vis[ci][cj] = true;
