@@ -1,9 +1,5 @@
-Hello 
-Hello 
-Hello 
-Hello 
-Hello 
-Hello 
-Hello 
-Hello 
-Hello 
+i =0 for first loop
+i =1 for first loop
+i =2 for first loop
+i =0 for second loop
+i =1 for second loop
